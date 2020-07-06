@@ -1,3 +1,4 @@
+// node class
 class Node {
   constructor(value) {
     this.value = value;
@@ -10,7 +11,7 @@ class DoublyLinkedList {
     this.head = null;
     this.tail = null;
   }
-
+  // sets head of linked list
   setHead(node) {
     if (this.head === null) {
       this.head = node;
@@ -20,7 +21,7 @@ class DoublyLinkedList {
 
     this.insertBefore(this.head, node);
   }
-
+  // sets tail of liked list
   setTail(node) {
     if (this.tail === null) {
       this.setHead(node);
@@ -28,7 +29,7 @@ class DoublyLinkedList {
     }
     this.insertAfter(this.tail, node);
   }
-
+  // inserts a new node before an existing node in the linked list
   insertBefore(node, nodeToInsert) {
     if (nodeToInsert === this.head && nodeToInsert === this.tail) {
       return;
@@ -45,6 +46,7 @@ class DoublyLinkedList {
     node.prev = nodeToInsert;
   }
 
+  // inserts a new node after an existing node in the linked list
   insertAfter(node, nodeToInsert) {
     if (nodeToInsert === this.head && nodeToInsert === this.tail) {
       return;
@@ -61,7 +63,7 @@ class DoublyLinkedList {
 
     node.next = nodeToInsert;
   }
-
+  // inserts a  node at a position
   insertAtPosition(position, nodeToInsert) {
     if (position === 1) {
       this.setHead(nodeToInsert);
@@ -80,6 +82,7 @@ class DoublyLinkedList {
     }
   }
 
+  // removes a node with given value
   removeNodesWithValue(value) {
     let node = this.head;
 
@@ -93,6 +96,7 @@ class DoublyLinkedList {
     }
   }
 
+  // removes a node
   remove(node) {
     if (node === this.head) {
       this.head = this.head.next;
@@ -103,6 +107,7 @@ class DoublyLinkedList {
     this.removeNodeBindings(node);
   }
 
+  // removes pointers
   removeNodeBindings(node) {
     if (node.prev !== null) {
       node.prev.next = node.next;
@@ -114,6 +119,7 @@ class DoublyLinkedList {
     node.next = null;
   }
 
+  // search for a node with specific value
   containsNodeWithValue(value) {
     // get access to the head
     let node = this.head;
@@ -127,3 +133,5 @@ class DoublyLinkedList {
     return node !== null;
   }
 }
+
+const 
