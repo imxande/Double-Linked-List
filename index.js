@@ -63,7 +63,7 @@ class DoublyLinkedList {
 
     node.next = nodeToInsert;
   }
-  // inserts a  node at a position
+  // inserts a node at a position
   insertAtPosition(position, nodeToInsert) {
     if (position === 1) {
       this.setHead(nodeToInsert);
@@ -133,5 +133,3 @@ class DoublyLinkedList {
     return node !== null;
   }
 }
-
-const 
